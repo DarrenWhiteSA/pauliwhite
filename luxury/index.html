@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pauli White — Landscape Studio</title>
+<meta name="description" content="Pauli White is a landscape design studio in the Western Cape, creating sensory landscapes for private estates, hotels and lodges, wine farms, schools and residences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Variant B — "Fynbos at dusk": deep moss, bone and burnished brass */
+:root{
+  --night:#1b1f1a;
+  --moss:#2c3428;
+  --bone:#f2ede3;
+  --bone-deep:#e7e0d2;
+  --brass:#a8865a;
+  --brass-soft:#c9ad85;
+  --ink:#1b1f1a;
+  --ink-soft:#5b5f55;
+  --line-dark:rgba(242,237,227,.16);
+  --line-light:rgba(27,31,26,.14);
+
+  --display:'Bodoni Moda','Didot','Bodoni 72',Georgia,serif;
+  --sans:'Manrope',-apple-system,'Helvetica Neue',Segoe UI,sans-serif;
+
+  --gutter:clamp(1rem,5vw,5.5rem);
+  --stack:clamp(5.5rem,12vw,10rem);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-weight:300;
+  font-size:clamp(15px,1vw,16.5px);line-height:1.8;letter-spacing:.01em}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+::selection{background:var(--brass);color:var(--bone)}
+:focus-visible{outline:1px solid var(--brass);outline-offset:4px}
+
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--gutter)}
+.section{padding-block:var(--stack)}
+.dark{background:var(--night);color:var(--bone)}
+.dark .muted{color:rgba(242,237,227,.62)}
+.muted{color:var(--ink-soft)}
+
+.eyebrow{font-size:.66rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--brass)}
+.display{font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:1.08;margin:0}
+.display em{font-style:italic}
+h2.display{font-size:clamp(2.1rem,4.8vw,4.2rem)}
+h3{margin:0;font-weight:400}
+p{margin:0 0 1.1em;max-width:58ch}
+p:last-child{margin-bottom:0}
+
+.link{display:inline-flex;align-items:center;gap:.9rem;font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;text-decoration:none}
+.link::after{content:"";width:2.6rem;height:1px;background:currentColor;transition:width .4s}
+.link:hover::after{width:4rem}
+
+/* ---------- header ---------- */
+.top{position:fixed;inset:0 0 auto;z-index:50;color:var(--bone);transition:background .4s,color .4s,border-color .4s;border-bottom:1px solid transparent}
+.top.solid{background:rgba(242,237,227,.96);backdrop-filter:blur(10px);color:var(--ink);border-bottom-color:var(--line-light)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:1.4rem}
+.mark{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.35rem;letter-spacing:.02em}
+.mark span{font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;margin-top:.35rem;opacity:.75}
+.top nav{display:flex;gap:2.4rem}
+.top nav a{text-decoration:none;font-size:.68rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;opacity:.85}
+.top nav a:hover{opacity:1}
+.top nav a.cta{border:1px solid currentColor;padding:.55rem 1.1rem;opacity:1}
+@media(max-width:900px){.top nav a:not(.cta){display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:var(--bone);overflow:hidden;background:var(--night)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:settle 2.4s cubic-bezier(.22,.61,.36,1) forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,31,26,.45) 0%,rgba(27,31,26,.05) 35%,rgba(27,31,26,.78) 100%)}
+@keyframes settle{to{transform:none}}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-bottom:clamp(3rem,8vw,6rem)}
+.hero{padding-top:7rem}
+.hero h1{font-size:clamp(2.4rem,min(6vw,10vh),6rem);max-width:13ch;margin:1.4rem 0 2.2rem}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;border-top:1px solid rgba(242,237,227,.28);padding-top:1.4rem}
+.hero-foot p{font-size:.95rem;max-width:44ch;opacity:.85;margin:0}
+.hero-foot .cap{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;opacity:.6}
+@media(prefers-reduced-motion:reduce){.hero img{animation:none;transform:none}}
+
+/* ---------- intro ---------- */
+.intro-grid{display:grid;grid-template-columns:.9fr 2.1fr;gap:clamp(2rem,6vw,6rem)}
+.intro .lead{font-family:var(--display);font-size:clamp(1.55rem,2.9vw,2.6rem);line-height:1.32;max-width:30ch;margin-bottom:2.6rem}
+.intro .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem)}
+@media(max-width:900px){.intro-grid,.intro .cols{grid-template-columns:1fr}}
+
+/* ---------- sectors ---------- */
+.head{display:grid;grid-template-columns:.9fr 2.1fr;gap:clamp(2rem,6vw,6rem);align-items:end;margin-bottom:clamp(3rem,7vw,5.5rem)}
+@media(max-width:900px){.head{grid-template-columns:1fr;gap:1.2rem}}
+.sectors{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-dark)}
+.sector{display:grid;grid-template-columns:4.5rem 1.2fr 1.6fr;gap:2rem;align-items:baseline;padding:2rem 0;border-bottom:1px solid var(--line-dark);transition:padding .4s}
+.sector .no{font-family:var(--display);font-style:italic;color:var(--brass-soft);font-size:1rem}
+.sector h3{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1.15;transition:color .3s}
+.sector p{font-size:.92rem;margin:0}
+.sector:hover h3{color:var(--brass-soft)}
+@media(max-width:760px){.sector{grid-template-columns:2.6rem 1fr;gap:.6rem 1rem}.sector p{grid-column:2}}
+
+/* ---------- projects ---------- */
+.feature{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1.5rem,3vw,3rem);align-items:end;margin-bottom:clamp(5rem,11vw,9rem)}
+.feature:last-of-type{margin-bottom:0}
+.feature .media{grid-column:1 / span 8;position:relative;cursor:zoom-in;background:none;border:0;padding:0}
+.feature .media > img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.feature .sketch{position:absolute;right:-8%;bottom:-10%;width:38%;background:#fff;padding:.6rem;box-shadow:0 20px 50px rgba(27,31,26,.18)}
+.feature .sketch img{aspect-ratio:3/2;object-fit:cover}
+.feature .sketch small{display:block;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:.45rem}
+.feature .text{grid-column:10 / span 3;padding-bottom:.4rem}
+.feature.flip .media{grid-column:5 / span 8;grid-row:1}
+.feature.flip .text{grid-column:1 / span 3;grid-row:1}
+.feature.flip .sketch{right:auto;left:-8%}
+.feature h3{font-family:var(--display);font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.12;margin:1rem 0 1.2rem}
+.feature p{font-size:.92rem}
+.feature dl{margin:1.6rem 0 0;font-size:.8rem;border-top:1px solid var(--line-light)}
+.feature dl div{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line-light)}
+.feature dt{letter-spacing:.18em;text-transform:uppercase;font-size:.6rem;color:var(--ink-soft);padding-top:.15rem}
+.feature dd{margin:0;text-align:right}
+@media(max-width:900px){
+  .feature .media,.feature.flip .media{grid-column:1 / -1;grid-row:auto}
+  .feature .text,.feature.flip .text{grid-column:1 / -1;grid-row:auto;padding-top:2.5rem}
+  .feature .sketch,.feature.flip .sketch{right:.8rem;left:auto;bottom:-1.8rem;width:44%}
+}
+
+.index{margin-top:clamp(5rem,10vw,8rem);border-top:1px solid var(--ink)}
+.index-row{display:grid;grid-template-columns:1.6fr 1fr 1fr .5fr;gap:1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line-light);font-size:.88rem;align-items:baseline}
+.index-row.h{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.index-row .n{font-family:var(--display);font-size:1.15rem}
+.index-row .y{text-align:right}
+@media(max-width:700px){.index-row{grid-template-columns:1fr auto}.index-row .s,.index-row .t{display:none}}
+
+/* ---------- senses band ---------- */
+.band{background:var(--moss);color:var(--bone);text-align:center}
+.senses{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem clamp(1.2rem,3.4vw,3.2rem);font-family:var(--display);font-style:italic;font-size:clamp(2rem,5.5vw,4.8rem);line-height:1.2;margin:2rem 0 2.4rem}
+.senses span:nth-child(even){color:var(--brass-soft)}
+.band p{margin:0 auto;max-width:56ch;color:rgba(242,237,227,.72)}
+
+/* ---------- approach ---------- */
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,3vw,3rem)}
+.stage{border-top:1px solid var(--ink);padding-top:1.4rem}
+.stage .no{font-family:var(--display);font-style:italic;font-size:2.4rem;line-height:1;color:var(--brass)}
+.stage h3{font-size:.74rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;margin:1.4rem 0 .8rem}
+.stage p{font-size:.9rem;color:var(--ink-soft)}
+@media(max-width:900px){.stages{grid-template-columns:1fr 1fr;row-gap:3rem}}
+@media(max-width:520px){.stages{grid-template-columns:1fr}}
+
+/* ---------- studio ---------- */
+.studio{background:var(--bone-deep)}
+.studio-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,7vw,7rem);align-items:center}
+.studio-grid .photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.creds{list-style:none;margin:2.4rem 0 0;padding:0;border-top:1px solid var(--line-light)}
+.creds li{display:flex;justify-content:space-between;gap:1.5rem;padding:.8rem 0;border-bottom:1px solid var(--line-light);font-size:.86rem}
+.creds span:last-child{color:var(--ink-soft);white-space:nowrap}
+@media(max-width:900px){.studio-grid{grid-template-columns:1fr}}
+
+/* ---------- enquire ---------- */
+.enquire h2{font-size:clamp(2.6rem,7vw,6rem);max-width:12ch;margin:1.4rem 0 3rem}
+.enquire-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,6vw,6rem);border-top:1px solid var(--line-dark);padding-top:2.4rem}
+.topics{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.topics a{text-decoration:none;font-size:.72rem;letter-spacing:.12em;border:1px solid var(--line-dark);padding:.55rem 1rem;transition:border-color .3s,color .3s}
+.topics a:hover{border-color:var(--brass-soft);color:var(--brass-soft)}
+.contact{list-style:none;margin:0;padding:0}
+.contact li{display:flex;justify-content:space-between;gap:1.5rem;padding:.9rem 0;border-bottom:1px solid var(--line-dark);font-size:.95rem}
+.contact .l{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,227,.55);padding-top:.3rem}
+.contact a{text-decoration:none}
+.contact a:hover{color:var(--brass-soft)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:4rem 0 2.4rem;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,227,.45)}
+@media(max-width:900px){.enquire-grid{grid-template-columns:1fr}}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(27,31,26,.96);display:none;color:var(--bone)}
+.lb.open{display:grid;grid-template-rows:auto 1fr auto}
+.lb-top,.lb-foot{display:flex;justify-content:space-between;align-items:center;padding:1.2rem var(--gutter);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase}
+.lb-stage{display:grid;place-items:center;padding:0 var(--gutter);min-height:0}
+.lb-stage img{max-height:78vh;width:auto;max-width:100%;object-fit:contain}
+.lb button{background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:.5rem 0}
+.lb button:hover{color:var(--brass-soft)}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="mark" href="#">
+      <b>Pauli White</b>
+      <span>Landscape Studio</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#sectors">Sectors</a>
+      <a href="#projects">Projects</a>
+      <a href="#approach">Approach</a>
+      <a href="#studio">Studio</a>
+      <a class="cta" href="#enquire">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <img src="../images/mpumalanga-dam-render.jpg" alt="Concept render of a natural swimming dam with a stone fire circle and timber outdoor kitchen set into grassy hills at dusk." width="1200" height="832">
+  <div class="wrap">
+    <span class="eyebrow">Landscape design · Western Cape</span>
+    <h1 class="display">Landscapes composed <em>for the senses</em></h1>
+    <div class="hero-foot">
+      <p>Sensory landscapes for private estates, hospitality, wine farms and places of learning, designed to be lived in slowly.</p>
+      <span class="cap">Dam social area, Mpumalanga · Concept 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="section intro">
+  <div class="wrap intro-grid">
+    <span class="eyebrow">The studio</span>
+    <div>
+      <p class="lead">Gardens that reward slow attention: restrained in form, rich in detail, and planted to change beautifully with every season.</p>
+      <div class="cols">
+        <p class="muted">Pauli White is a landscape design studio led by Pauli White, trained in landscape architecture. The work begins with the land as it is: its light, soil, views and the way people will move through it. From there, every space is shaped through touch, scent, sound, sight and taste.</p>
+        <p class="muted">Each commission is carried personally from first sketch to masterplan, planting design, procurement and installation, so the finished landscape holds true to the idea that began it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="sectors">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Who we design for</span>
+      <h2 class="display">Places with a <em>sense of arrival</em></h2>
+    </div>
+    <ol class="sectors">
+      <li class="sector"><span class="no">i.</span><h3>Private estates &amp; residences</h3><p class="muted">Arrival courts, garden rooms, natural pools and planting that frames the architecture and the view beyond.</p></li>
+      <li class="sector"><span class="no">ii.</span><h3>Hotels, lodges &amp; guest houses</h3><p class="muted">Restorative outdoor spaces that become part of the guest experience, from courtyards and spa gardens to gathering places around fire and water.</p></li>
+      <li class="sector"><span class="no">iii.</span><h3>Wine farms</h3><p class="muted">Tasting-room gardens, edible and aromatic borders, and waterwise landscapes that sit naturally against vineyard and mountain.</p></li>
+      <li class="sector"><span class="no">iv.</span><h3>Schools &amp; early learning</h3><p class="muted">Sensory play gardens with stepping-stone trails, water, sand and planting for discovery, alongside calm spaces for children to settle.</p></li>
+      <li class="sector"><span class="no">v.</span><h3>Wellness &amp; practices</h3><p class="muted">Quiet therapeutic gardens for clinics, retreats and practices, where a landscape supports calm and recovery.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Selected projects</span>
+      <h2 class="display">From <em>first sketch</em> to finished landscape</h2>
+    </div>
+
+    <article class="feature">
+      <button class="media" type="button" data-gallery="0" aria-label="View Dam social area images">
+        <img src="../images/mpumalanga-dam-render.jpg" alt="Concept render of the Mpumalanga dam social area." loading="lazy">
+        <span class="sketch"><img src="../images/mpumalanga-dam-sketch.jpg" alt="" loading="lazy"><small>Concept sketch</small></span>
+      </button>
+      <div class="text">
+        <span class="eyebrow">01 · Mpumalanga</span>
+        <h3>Dam social area</h3>
+        <p class="muted">A gathering place shaped around water, fire and the view: a natural swimming dam, a sunken stone fire circle and an outdoor kitchen, with play for children within sight.</p>
+        <dl><div><dt>Scope</dt><dd>Concept, layout</dd></div><div><dt>Year</dt><dd>2026</dd></div></dl>
+      </div>
+    </article>
+
+    <article class="feature flip">
+      <button class="media" type="button" data-gallery="1" aria-label="View Private sensory garden images">
+        <img src="../images/sensory-garden-render.jpg" alt="Concept vignette of a private sensory garden walk." loading="lazy">
+        <span class="sketch"><img src="../images/sensory-garden-sketch.jpg" alt="" loading="lazy"><small>Concept sketch</small></span>
+      </button>
+      <div class="text">
+        <span class="eyebrow">02 · Private garden</span>
+        <h3>A sensory garden walk</h3>
+        <p class="muted">A curved path along a stone-edged border of lavender, salvia and grasses, with stepping stones into the planting, a birdbath and insect hotels to bring wildlife close.</p>
+        <dl><div><dt>Scope</dt><dd>Concept, planting palette</dd></div><div><dt>Year</dt><dd>2025</dd></div></dl>
+      </div>
+    </article>
+
+    <article class="feature">
+      <button class="media" type="button" data-gallery="2" aria-label="View Claremont courtyard images">
+        <img src="../images/claremont-render.jpg" alt="Concept vignette of the Claremont courtyard plunge pool." loading="lazy">
+        <span class="sketch"><img src="../images/claremont-sketch.jpg" alt="" loading="lazy"><small>Concept sketch</small></span>
+      </button>
+      <div class="text">
+        <span class="eyebrow">03 · Claremont, Cape Town</span>
+        <h3>Courtyard retreat</h3>
+        <p class="muted">A walled courtyard reimagined as a private outdoor room: timber decking, a tiled plunge pool and climbers softening every wall.</p>
+        <dl><div><dt>Scope</dt><dd>Concept, planting</dd></div><div><dt>Year</dt><dd>2025</dd></div></dl>
+      </div>
+    </article>
+
+    <article class="feature flip">
+      <button class="media" type="button" data-gallery="3" aria-label="View Irene garden images">
+        <img src="../images/irene-11.jpg" alt="Completed Irene garden with open lawns and mature trees." loading="lazy">
+      </button>
+      <div class="text">
+        <span class="eyebrow">04 · Irene, Gauteng</span>
+        <h3>Country garden</h3>
+        <p class="muted">Curving beds and open lawn linking the house to the mature trees beyond. Planted, procured and installed under site supervision.</p>
+        <dl><div><dt>Scope</dt><dd>Planting, installation</dd></div><div><dt>Year</dt><dd>2017</dd></div></dl>
+      </div>
+    </article>
+
+    <div class="index" role="table" aria-label="Project index">
+      <div class="index-row h" role="row"><span>Project</span><span class="s">Location</span><span class="t">Scope</span><span class="y">Year</span></div>
+      <div class="index-row" role="row"><span class="n">Dam social area</span><span class="s">Mpumalanga</span><span class="t">Concept</span><span class="y">2026</span></div>
+      <div class="index-row" role="row"><span class="n">Private sensory garden</span><span class="s">Private residence</span><span class="t">Concept</span><span class="y">2025</span></div>
+      <div class="index-row" role="row"><span class="n">Courtyard retreat</span><span class="s">Claremont</span><span class="t">Concept</span><span class="y">2025</span></div>
+      <div class="index-row" role="row"><span class="n">Interior plant styling</span><span class="s">City Bowl · Atlantic Seaboard</span><span class="t">Styling</span><span class="y">2018–19</span></div>
+      <div class="index-row" role="row"><span class="n">Country garden</span><span class="s">Irene</span><span class="t">Installation</span><span class="y">2017</span></div>
+      <div class="index-row" role="row"><span class="n">Shade garden</span><span class="s">Centurion</span><span class="t">Installation</span><span class="y">2017</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <span class="eyebrow">The sensory signature</span>
+    <div class="senses" aria-label="Touch, scent, sound, sight, taste"><span>Touch</span><span>Scent</span><span>Sound</span><span>Sight</span><span>Taste</span></div>
+    <p>Grasses that move in the wind, fynbos that releases scent as you pass, water over stone, light filtering through a canopy, and fruit within reach. Every landscape is designed through all five senses.</p>
+  </div>
+</section>
+
+<section class="section" id="approach">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Approach</span>
+      <h2 class="display">One studio, <em>start to finish</em></h2>
+    </div>
+    <div class="stages">
+      <div class="stage"><span class="no">I</span><h3>Reading the site</h3><p>A site visit and measured survey of light, soil, views and how the space will be used.</p></div>
+      <div class="stage"><span class="no">II</span><h3>Concept &amp; masterplan</h3><p>Hand-drawn sketches and concept vignettes that set the atmosphere before the detail.</p></div>
+      <div class="stage"><span class="no">III</span><h3>Documentation</h3><p>Planting plans, working drawings, construction details and bills of quantities.</p></div>
+      <div class="stage"><span class="no">IV</span><h3>Installation &amp; handover</h3><p>Procurement, supplier coordination and site supervision through to a considered handover.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section studio" id="studio">
+  <div class="wrap studio-grid">
+    <figure class="photo" style="margin:0">
+      <img src="../images/centurion-09.jpg" alt="A brick path through layered shade planting in the completed Centurion garden." loading="lazy">
+    </figure>
+    <div>
+      <span class="eyebrow">Pauli White</span>
+      <h2 class="display" style="margin:1.2rem 0 1.8rem">Trained in landscape architecture, <em>led by feeling</em></h2>
+      <p class="muted">Pauli trained in landscape architecture at the University of Pretoria and later in interior design. She has worked as a landscape technologist on planting plans, renders, bills of quantities and installations, and as an in-house plant stylist. Her work is shaped by a long-held interest in how our surroundings affect wellbeing.</p>
+      <ul class="creds">
+        <li><span>BSc Landscape Architecture, University of Pretoria</span><span>2012–14</span></li>
+        <li><span>Landscape technologist, New Town Landscape Architects, Outerspace, The Friendly Plant</span><span>2015–16</span></li>
+        <li><span>Diploma in Interior Design, IDISA</span><span>2017</span></li>
+        <li><span>Plant stylist &amp; consultant, Folha</span><span>2018–20</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section dark enquire" id="enquire">
+  <div class="wrap">
+    <span class="eyebrow">Commissions</span>
+    <h2 class="display">Begin a <em>conversation</em></h2>
+    <div class="enquire-grid">
+      <div>
+        <p class="muted">Pauli takes on a small number of commissions each season, so each project has her full attention. Share a little about your site and what you imagine for it.</p>
+        <div class="topics">
+          <a href="mailto:pauliwhite@icloud.com?subject=Enquiry%3A%20Private%20estate%20or%20residence">Estate or residence</a>
+          <a href="mailto:pauliwhite@icloud.com?subject=Enquiry%3A%20Hotel%20or%20lodge">Hotel or lodge</a>
+          <a href="mailto:pauliwhite@icloud.com?subject=Enquiry%3A%20Wine%20farm">Wine farm</a>
+          <a href="mailto:pauliwhite@icloud.com?subject=Enquiry%3A%20School%20or%20early%20learning">School</a>
+          <a href="mailto:pauliwhite@icloud.com?subject=Enquiry%3A%20Wellness%20or%20practice">Wellness or practice</a>
+        </div>
+      </div>
+      <ul class="contact">
+        <li><span class="l">Email</span><a href="mailto:pauliwhite@icloud.com">pauliwhite@icloud.com</a></li>
+        <li><span class="l">Telephone</span><a href="tel:+27823398852">+27 82 339 8852</a></li>
+        <li><span class="l">Studio</span><span>Cape Town, Western Cape</span></li>
+      </ul>
+    </div>
+    <div class="foot"><span>Pauli White · Landscape Studio</span><span>Western Cape, South Africa</span></div>
+  </div>
+</section>
+
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Project images">
+  <div class="lb-top"><span id="lbTitle"></span><button id="lbClose">Close</button></div>
+  <div class="lb-stage"><img id="lbImg" alt=""></div>
+  <div class="lb-foot"><button data-step="-1">Previous</button><span id="lbCount"></span><button data-step="1">Next</button></div>
+</div>
+
+<script>
+/* Lightbox galleries, matched to data-gallery on each feature. */
+const GALLERIES = [
+  { title:'Dam social area', images:[
+    ['../images/mpumalanga-dam-render.jpg','Concept render'],
+    ['../images/mpumalanga-dam-sketch.jpg','Concept sketch'] ]},
+  { title:'A sensory garden walk', images:[
+    ['../images/sensory-garden-render.jpg','Concept vignette'],
+    ['../images/sensory-garden-sketch.jpg','Concept sketch'] ]},
+  { title:'Courtyard retreat', images:[
+    ['../images/claremont-render.jpg','Concept vignette'],
+    ['../images/claremont-sketch.jpg','Concept sketch'] ]},
+  { title:'Country garden', images:[
+    ['../images/irene-11.jpg','Installation'],
+    ['../images/irene-10.jpg','Installation'],
+    ['../images/irene-12.jpg','Installation'],
+    ['../images/irene-13.jpg','Installation'] ]}
+];
+
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+let g = 0, i = 0, lastFocus = null;
+function show(){
+  const gal = GALLERIES[g], [src, label] = gal.images[i];
+  lbImg.src = src; lbImg.alt = `${gal.title}: ${label}`;
+  document.getElementById('lbTitle').textContent = `${gal.title} · ${label}`;
+  document.getElementById('lbCount').textContent = `${i + 1} / ${gal.images.length}`;
+}
+function step(d){ const n = GALLERIES[g].images.length; i = (i + d + n) % n; show(); }
+function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; if(lastFocus) lastFocus.focus(); }
+document.querySelectorAll('[data-gallery]').forEach(b => b.addEventListener('click', () => {
+  lastFocus = b; g = Number(b.dataset.gallery); i = 0; show();
+  lb.classList.add('open'); document.body.style.overflow = 'hidden';
+  document.getElementById('lbClose').focus();
+}));
+document.getElementById('lbClose').addEventListener('click', close);
+lb.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => step(Number(b.dataset.step))));
+lb.addEventListener('click', e => { if(e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+document.addEventListener('keydown', e => {
+  if(!lb.classList.contains('open')) return;
+  if(e.key === 'Escape') close();
+  if(e.key === 'ArrowRight') step(1);
+  if(e.key === 'ArrowLeft') step(-1);
+});
+
+/* Header turns solid once the hero has scrolled past. */
+const header = document.getElementById('top'), hero = document.querySelector('.hero');
+addEventListener('scroll', () => header.classList.toggle('solid', scrollY > hero.offsetHeight - 90), { passive:true });
+</script>
+</body>
+</html>
