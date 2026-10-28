@@ -1,29 +1,24 @@
-# Pauli White — Sensory landscape design
+# Pauli White | sensory gardens
 
-Static one-page site for Pauli White's landscape design and services business. No build step; deploys to Netlify as-is (`netlify.toml` publishes the repo root).
+Single-page website for Pauli White's garden design practice in Cape Town. Static HTML with no build step; deploys to Netlify as-is (`netlify.toml` publishes the repo root and redirects the old `/luxury/` page here).
 
-## Design system
+Sections: 01 Introduction · 02 Approach (Structure. Senses. Self.) · 03 Process · testimonial bar · 04 Contact.
 
-Carried over from Pauli's CV site (cv-pauli-white.netlify.app) so the two read as one identity:
+## Brand
 
-- Colour tokens in `:root` at the top of `index.html`: paper `#ffffff`, warm paper `#faf9f7`, sage `#adbba1`, deep sage `#7d8b73`, stone `#c7c8be`, ink `#3a3e38`, soft ink `#6e736b`, rule `#e2e3de`.
-- Type: Jost (200–400) for everything, Cormorant Garamond italic for quotes and emphasis.
-- Restrained headings, thin rules, generous whitespace.
+Taken from Pauli's "Pauli White | Sensory Gardens" advertisement:
 
-## Variant B: Landscape Studio (`luxury/`)
+- `images/pw-mark.png`: the flower mark, extracted from the advertisement as white on transparent. The page recolours it with a CSS mask (`.mark`), so it can be olive on ivory or ivory on olive without a second file.
+- `images/pw-leaves-intro.jpg`, `images/pw-leaves-contact.jpg`: crops of the watercolour leaf artwork, with no lettering.
+- `images/pw-brand-artwork.jpg`: the advertisement artwork, used as the social-share image.
+- Colours (sampled from the advertisement): ivory `#ece8dd`, olive `#636131`, deep olive `#4a4524`, moss `#6d6a3a`, charcoal `#2f2e29`.
+- Type: Cormorant Garamond (headings and the widely spaced wordmark) and Jost (the "sensory gardens" descriptor and body text).
 
-A second design direction at `/luxury/`, aimed at estates, hotels, wine farms and schools. It deliberately departs from the CV identity:
+## Editing
 
-- Palette: night `#1b1f1a`, moss `#2c3428`, bone `#f2ede3`, brass `#a8865a`.
-- Type: Bodoni Moda (display, with italic emphasis) and Manrope (body).
-- Layout: full-bleed hero, a sectors index, alternating case-study features with the concept sketch inset over the finished image, a project index table, and a lightbox (`GALLERIES` in the page script).
-
-It shares the `images/` folder with the main page.
-
-## Adding a project
-
-1. Put the image files in `images/` (about 1400px wide, JPEG).
-2. Add an entry to the `PROJECTS` array in the `<script>` near the bottom of `index.html`: `title`, `kind` (type and year), `cover`, `note`, `summary`, `facts` and `images`. Set `wide:true` for a full-width card and `two:true` for a two-column gallery in the drawer.
+- **Approach images:** one each for Structure, Senses and Self. Keep each caption honest: label concept renders as renders.
+- **Testimonials:** add genuine quotes to the `TESTIMONIALS` list in the page script. The bar stays hidden while the list is empty, and rotates one quote at a time once there is more than one.
+- **Fees:** the concept fee and the deposit split are in the Process section.
 
 ## Preview locally
 

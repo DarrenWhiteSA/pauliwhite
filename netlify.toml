@@ -1,2 +1,8 @@
 [build]
   publish = "."
+
+# The earlier "Landscape Studio" variant now lives on as the single page.
+[[redirects]]
+  from = "/luxury/*"
+  to = "/"
+  status = 301
